@@ -2,8 +2,6 @@ package br.com.anhembi.bradesco.banco.model;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
-
 @Entity(name = "TB_PESSOA")
 public class Pessoa {
     @Id
@@ -17,16 +15,13 @@ public class Pessoa {
     @Column(name = "pessoa_cpf")
     private String cpf;
 
-    @Column(name = "pessoa_dt_nascimento")
-    private LocalDate dataNascimento;
 
     public Pessoa() {
     }
-    public Pessoa(Long id, String nome, String cpf, LocalDate dataNascimento) {
+    public Pessoa(Long id, String nome, String cpf) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
     }
 
     public Long getId() {
@@ -53,11 +48,4 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
 }
