@@ -1,0 +1,6 @@
+CREATE PROCEDURE sp_pessoa_ConsultarPorId(
+	IN ID INT
+	)
+BEGIN
+	SELECT p FROM TB_PESSOA AS p WHERE p.id = ID;
+END
